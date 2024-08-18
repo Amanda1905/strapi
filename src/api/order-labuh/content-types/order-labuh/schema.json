@@ -45,9 +45,6 @@
     "snap_token": {
       "type": "text"
     },
-    "attachment": {
-      "type": "string"
-    },
     "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
@@ -107,6 +104,14 @@
       "relation": "manyToOne",
       "target": "api::role-reflect.role-reflect",
       "inversedBy": "order_labuhs"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

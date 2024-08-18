@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order-tambat",
     "pluralName": "order-tambats",
-    "displayName": "Order Tambat"
+    "displayName": "Order Tambat",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -48,9 +49,6 @@
     },
     "snap_token": {
       "type": "text"
-    },
-    "attachment": {
-      "type": "string"
     },
     "users_permissions_user": {
       "type": "relation",
@@ -105,6 +103,13 @@
       "relation": "manyToOne",
       "target": "api::role-reflect.role-reflect",
       "inversedBy": "order_tambats"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

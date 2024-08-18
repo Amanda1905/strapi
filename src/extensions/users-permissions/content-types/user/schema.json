@@ -88,6 +88,12 @@
       "relation": "oneToMany",
       "target": "api::order-yatch.order-yatch",
       "mappedBy": "users_permissions_user"
+    },
+    "order_air_bersihs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-air-bersih.order-air-bersih",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

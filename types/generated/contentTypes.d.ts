@@ -790,6 +790,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::order-yatch.order-yatch'
     >;
+    order_air_bersihs: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::order-air-bersih.order-air-bersih'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1243,7 +1248,6 @@ export interface ApiOrderAirBersihOrderAirBersih extends Schema.CollectionType {
       Attribute.DefaultTo<false>;
     payment_deadline: Attribute.DateTime & Attribute.Required;
     snap_token: Attribute.Text;
-    attachment: Attribute.String;
     payment_status: Attribute.Relation<
       'api::order-air-bersih.order-air-bersih',
       'manyToOne',
@@ -1279,6 +1283,12 @@ export interface ApiOrderAirBersihOrderAirBersih extends Schema.CollectionType {
       'manyToOne',
       'api::role-reflect.role-reflect'
     >;
+    users_permissions_user: Attribute.Relation<
+      'api::order-air-bersih.order-air-bersih',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    attachment: Attribute.Media<'files'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1333,7 +1343,6 @@ export interface ApiOrderLabuhOrderLabuh extends Schema.CollectionType {
       Attribute.DefaultTo<false>;
     payment_deadline: Attribute.DateTime & Attribute.Required;
     snap_token: Attribute.Text;
-    attachment: Attribute.String;
     users_permissions_user: Attribute.Relation<
       'api::order-labuh.order-labuh',
       'manyToOne',
@@ -1384,6 +1393,7 @@ export interface ApiOrderLabuhOrderLabuh extends Schema.CollectionType {
       'manyToOne',
       'api::role-reflect.role-reflect'
     >;
+    attachment: Attribute.Media<'files'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1408,6 +1418,7 @@ export interface ApiOrderTambatOrderTambat extends Schema.CollectionType {
     singularName: 'order-tambat';
     pluralName: 'order-tambats';
     displayName: 'Order Tambat';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1445,7 +1456,6 @@ export interface ApiOrderTambatOrderTambat extends Schema.CollectionType {
       Attribute.DefaultTo<false>;
     payment_deadline: Attribute.DateTime & Attribute.Required;
     snap_token: Attribute.Text;
-    attachment: Attribute.String;
     users_permissions_user: Attribute.Relation<
       'api::order-tambat.order-tambat',
       'manyToOne',
@@ -1491,6 +1501,7 @@ export interface ApiOrderTambatOrderTambat extends Schema.CollectionType {
       'manyToOne',
       'api::role-reflect.role-reflect'
     >;
+    attachment: Attribute.Media<'files'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1515,6 +1526,7 @@ export interface ApiOrderYatchOrderYatch extends Schema.CollectionType {
     singularName: 'order-yatch';
     pluralName: 'order-yatches';
     displayName: 'Order Yatch';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1544,7 +1556,6 @@ export interface ApiOrderYatchOrderYatch extends Schema.CollectionType {
       Attribute.DefaultTo<false>;
     payment_deadline: Attribute.DateTime & Attribute.Required;
     snap_token: Attribute.Text;
-    attachment: Attribute.String;
     users_permissions_user: Attribute.Relation<
       'api::order-yatch.order-yatch',
       'manyToOne',
@@ -1585,6 +1596,7 @@ export interface ApiOrderYatchOrderYatch extends Schema.CollectionType {
       'manyToOne',
       'api::role-reflect.role-reflect'
     >;
+    attachment: Attribute.Media<'files'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

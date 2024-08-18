@@ -45,9 +45,6 @@
     "snap_token": {
       "type": "text"
     },
-    "attachment": {
-      "type": "string"
-    },
     "payment_status": {
       "type": "relation",
       "relation": "manyToOne",
@@ -89,6 +86,20 @@
       "relation": "manyToOne",
       "target": "api::role-reflect.role-reflect",
       "inversedBy": "order_air_bersihs"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "order_air_bersihs"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

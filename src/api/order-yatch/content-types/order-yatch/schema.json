@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order-yatch",
     "pluralName": "order-yatches",
-    "displayName": "Order Yatch"
+    "displayName": "Order Yatch",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -43,9 +44,6 @@
     },
     "snap_token": {
       "type": "text"
-    },
-    "attachment": {
-      "type": "string"
     },
     "users_permissions_user": {
       "type": "relation",
@@ -94,6 +92,13 @@
       "relation": "manyToOne",
       "target": "api::role-reflect.role-reflect",
       "inversedBy": "order_yatches"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
